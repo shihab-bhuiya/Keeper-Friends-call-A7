@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router";
 
+
+
 const NavBar = () => {
   const linkStyle = ({ isActive }) =>
     isActive
@@ -17,9 +19,9 @@ const NavBar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-2">
-        <NavLink to="/" className={linkStyle}>Home</NavLink>
+        <NavLink to="/" className={linkStyle}> Home</NavLink>
         <NavLink to="/timeline" className={linkStyle}>Timeline</NavLink>
-        <NavLink to="/stats" className={linkStyle}>Stats</NavLink>
+        <NavLink to="/static" className={linkStyle}>Static</NavLink>
       </div>
 
       {/* Mobile Dropdown */}
@@ -28,7 +30,7 @@ const NavBar = () => {
         <ul className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40">
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/timeline">Timeline</NavLink></li>
-          <li><NavLink to="/stats">Stats</NavLink></li>
+          <li><NavLink to="/static">Static</NavLink></li>
         </ul>
       </div>
     </div>

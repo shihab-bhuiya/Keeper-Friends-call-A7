@@ -3,81 +3,90 @@ import { toast } from 'react-toastify';
 
 export const friendContext = createContext();
 
-const FriendProvider = ({children}) => {
+const FriendProvider = ({ children }) => {
+
     const [text, setText] = useState([]);
     const [video, setVideo] = useState([]);
     const [call, setCall] = useState([]);
-//     const [markedFriends, setMarkedFriends] = useState([]);
+    const [markedFriends, setMarkedFriends] = useState([]);
 
-//     const markFriend = (expectedFriend, type) => {
-//     const isExisting = markedFriends.find(f => f.id === expectedFriend.id);
-
-//     if (isExisting) {
-//         alert(`Already marked as ${isExisting.type}`);
-//         return;
-//     }
-
-//     setMarkedFriends( [
-//         { ...expectedFriend, type }
-//     ]);
-
-//     alert(`Marked as ${type}`);
-// };
-
+    // 🔥 TEXT
     const markAsText = (expectedFriend) => {
-        const isExisting = text.find((friend) => friend.id == expectedFriend.id);
-        if(isExisting){
+
+        const isExisting = text.find(friend => friend.id == expectedFriend.id);
+
+        if (isExisting) {
             toast.error("Already Marked as Text");
             return;
-        } else {
-            setText([...text, expectedFriend]);
-            toast.success("Marked as Text");
-            return;
-        }           
-        
-    }
+        }
 
+        const newEntry = {
+            ...expectedFriend,
+            type: "text",
+            time: new Date().toLocaleString()
+        };
 
+        setText(prev => [...prev, expectedFriend]);
+        setMarkedFriends(prev => [newEntry, ...prev]); // latest first
 
+        toast.success("Marked as Text");
+    };
+
+    // 🔥 VIDEO
     const markAsVideo = (expectedFriend) => {
-        const isExisting = video.find((friend) => friend.id == expectedFriend.id);
-        if(isExisting){
+
+        const isExisting = video.find(friend => friend.id == expectedFriend.id);
+
+        if (isExisting) {
             toast.error("Already Marked as Video");
             return;
-        } else {
-            setVideo([...video, expectedFriend]);
-            toast.success("Marked as Video");
-            return;
-        }   
+        }
 
-    }
+        const newEntry = {
+            ...expectedFriend,
+            type: "video",
+            time: new Date().toLocaleString()
+        };
 
+        setVideo(prev => [...prev, expectedFriend]);
+        setMarkedFriends(prev => [newEntry, ...prev]);
+
+        toast.success("Marked as Video");
+    };
+
+    // 🔥 CALL
     const markAsCall = (expectedFriend) => {
-        const isExisting = call.find((friend) => friend.id == expectedFriend.id);
-        if(isExisting){
+
+        const isExisting = call.find(friend => friend.id == expectedFriend.id);
+
+        if (isExisting) {
             toast.error("Already Marked as Call");
             return;
-        } else {
-            setCall([...call, expectedFriend]);
-            toast.success("Marked as Call");
-            return;
-        }   
-    }
+        }
+
+        const newEntry = {
+            ...expectedFriend,
+            type: "call",
+            time: new Date().toLocaleString()
+        };
+
+        setCall(prev => [...prev, expectedFriend]);
+        setMarkedFriends(prev => [newEntry, ...prev]);
+
+        toast.success("Marked as Call");
+    };
 
     const context = {
         markAsText,
         markAsVideo,
         markAsCall,
-        age: 30,
-        location: 'New York',
+        markedFriends,
     };
+
     return (
-        <div>
-            <friendContext.Provider value={context}>
-                {children}
-            </friendContext.Provider>
-            
-        </div>
+        <friendContext.Provider value={context}>
+            {children}
+        </friendContext.Provider>
     );
 };
 
