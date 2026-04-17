@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router";
-
-
+import { IoIosTime } from "react-icons/io";
+import { IoAnalytics } from "react-icons/io5";
+import { TiHomeOutline } from "react-icons/ti";
 
 const NavBar = () => {
   const linkStyle = ({ isActive }) =>
@@ -19,9 +20,9 @@ const NavBar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-2">
-        <NavLink to="/" className={linkStyle}> Home</NavLink>
-        <NavLink to="/timeline" className={linkStyle}>Timeline</NavLink>
-        <NavLink to="/static" className={linkStyle}>Static</NavLink>
+        <NavLink to="/" className={linkStyle}><TiHomeOutline /> Home</NavLink>
+        <NavLink to="/timeline" className={linkStyle}><IoIosTime /> Timeline</NavLink>
+        <NavLink to="/static" className={linkStyle}><IoAnalytics /> Static</NavLink>
       </div>
 
       {/* Mobile Dropdown */}
