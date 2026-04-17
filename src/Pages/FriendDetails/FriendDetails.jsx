@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { friendContext } from '../../Context/FriendContext';
 
 const FriendDetails = () => {
     const friend = useParams();
 
     const friends = useLoaderData();
 
+    const {markAsVideo,markAsCall,markAsText} = useContext(friendContext);
+
     const expectedFriend = friends.find((friendData) => friendData.id === parseInt(friend.friendId));
 
-    
-console.log(expectedFriend);
+    console.log(expectedFriend);
     return (
       <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -34,11 +36,11 @@ console.log(expectedFriend);
           </div>
 
           <p className="mt-4 text-gray-600 italic">
-            "Former colleague, great mentor"
+            {expectedFriend.bio}
           </p>
 
-          <p className="text-sm text-gray-400 mt-2">
-            Preferred: email
+          <p className="text-sm  mt-2">
+            Preferred: {expectedFriend.email}
           </p>
 
           <div className="w-full mt-6 space-y-3">
@@ -62,17 +64,17 @@ console.log(expectedFriend);
           {/* STATS */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white shadow rounded-xl p-4 text-center">
-              <h3 className="text-2xl font-bold">62</h3>
+              <h3 className="text-2xl font-bold">{expectedFriend.days_since_contact}</h3>
               <p className="text-gray-500 text-sm">Days Since Contact</p>
             </div>
 
             <div className="bg-white shadow rounded-xl p-4 text-center">
-              <h3 className="text-2xl font-bold">30</h3>
-              <p className="text-gray-500 text-sm">Goal (Days)</p>
+              <h3 className="text-2xl font-bold">{expectedFriend.goal}</h3>
+              <p className="text-gray-500 text-sm">Goal</p>
             </div>
 
             <div className="bg-white shadow rounded-xl p-4 text-center">
-              <h3 className="text-lg font-semibold">Feb 27, 2026</h3>
+              <h3 className="text-lg font-semibold">{expectedFriend.next_due_date}</h3>
               <p className="text-gray-500 text-sm">Next Due</p>
             </div>
           </div>
@@ -98,19 +100,19 @@ console.log(expectedFriend);
             <h3 className="font-semibold mb-4">Quick Check-In</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <button className="border rounded-xl p-4 hover:bg-gray-100 flex flex-col items-center">
+              <button onClick={()=> markAsCall(expectedFriend)} className="border rounded-xl p-4 hover:bg-gray-100 flex flex-col items-center">
                 📞
-                <span className="mt-2">Call</span>
+                <span className="mt-2" >Call</span>
               </button>
 
-              <button className="border rounded-xl p-4 hover:bg-gray-100 flex flex-col items-center">
+              <button onClick={()=> markAsText(expectedFriend)} className="border rounded-xl p-4 hover:bg-gray-100 flex flex-col items-center">
                 💬
-                <span className="mt-2">Text</span>
+                <span className="mt-2" >Text</span>
               </button>
 
-              <button className="border rounded-xl p-4 hover:bg-gray-100 flex flex-col items-center">
+              <button onClick={()=> markAsVideo(expectedFriend)} className="border rounded-xl p-4 hover:bg-gray-100 flex flex-col items-center">
                 🎥
-                <span className="mt-2">Video</span>
+                <span className="mt-2" >Video</span>
               </button>
             </div>
           </div>
