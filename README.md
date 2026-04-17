@@ -1,16 +1,85 @@
-# React + Vite
+# 👥 KeenKeeper — Keep Your Friendships Alive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+KeenKeeper একটি React ভিত্তিক ফ্রেন্ডশিপ ম্যানেজমেন্ট ও ট্র্যাকিং অ্যাপ। এই অ্যাপের মাধ্যমে ব্যবহারকারীরা তাদের বন্ধুদের সাথে যোগাযোগের ইতিহাস ট্র্যাক করতে পারে, টিমলাইন দেখতে পারে এবং ফ্রেন্ডশিপ অ্যানালিটিক্স বিশ্লেষণ করতে পারে।
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 প্রকল্পের উদ্দেশ্য
 
-## React Compiler
+আজকের ব্যস্ত জীবনে আমরা অনেক বন্ধুর সাথে নিয়মিত যোগাযোগ রাখতে পারি না। KeenKeeper এই সমস্যার সমাধান করে তোমার বন্ধুদের সাথে সম্পর্ক ট্র্যাক এবং ম্যানেজ করতে সাহায্য করে।
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 ব্যবহৃত প্রযুক্তি
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ React.js
+- 🌐 React Router DOM
+- 🎨 Tailwind CSS
+- 📊 Recharts
+- 🔔 React Toastify (toast notification)
+- ⚡ Vite
+
+---
+
+## ✨ প্রধান ফিচারসমূহ
+
+### 🏠 Home Page
+- সুন্দর Navbar ও Banner সেকশন
+- ৪টি summary card
+- JSON ডেটা থেকে বন্ধুদের লিস্ট দেখানো
+- Responsive friend cards grid layout
+
+### 👥 Friend Cards
+- প্রতিটি বন্ধুর ছবি, নাম, ট্যাগ ও স্ট্যাটাস দেখানো
+- Card click করলে Details page-এ নিয়ে যায়
+
+### 👤 Friend Details Page
+- দুই কলাম লেআউট
+- Friend এর সম্পূর্ণ তথ্য
+- Action buttons (Snooze, Archive, Delete)
+- Quick Check-in (Call, Text, Video)
+- ক্লিক করলে Timeline-এ নতুন এন্ট্রি যোগ হয়
+- Toast notification দেখানো হয়
+
+### 📜 Timeline Page
+- Call, Text, Video interaction history দেখানো হয়
+- ফিল্টার (Call/Text/Video) সুবিধা
+
+### 📊 Stats / Analytics Page
+- Recharts দিয়ে Pie Chart
+- Call / Text / Video এর তুলনামূলক ডাটা
+
+### ⚠️ 404 Page
+- ভুল URL হলে সুন্দর 404 পেজ দেখায়
+
+### 🔄 Loading State
+- ডাটা লোড হওয়ার সময় loading animation দেখানো হয়
+
+---
+
+## 📱 Responsive Design
+
+এই প্রজেক্টটি সম্পূর্ণ responsive:
+- 📱 Mobile
+- 📟 Tablet
+- 💻 Desktop
+
+---
+
+## 📂 Project Features Summary
+
+- JSON ফাইল থেকে friend data লোড
+- React Router দিয়ে navigation
+- Dynamic friend details page
+- Timeline tracking system
+- Interactive analytics chart
+- Toast notification system
+- Fully responsive UI
+
+---
+
+## 🛠️ কিভাবে রান করবে
+
+```bash
+npm install
+npm run dev
