@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "picture": "https://randomuser.me/api/portraits/men/1.jpg",
+    "email": "john@example.com",
+    "days_since_contact": 12,
+    "status": "overdue",
+    "tags": ["college", "close friend"],
+    "bio": "Friend",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 2,
+    "name": "Emma Watson",
+    "picture": "https://randomuser.me/api/portraits/women/2.jpg",
+    "email": "emma@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["work", "team"],
+    "bio": "Colleague",
+    "goal": 10,
+    "next_due_date": "2025-08-01"
+  },
+  {
+    "id": 3,
+    "name": "Michael Smith",
+    "picture": "https://randomuser.me/api/portraits/men/3.jpg",
+    "email": "michael@example.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": ["gym", "buddy"],
+    "bio": "Work",
+    "goal": 7,
+    "next_due_date": "2025-07-10"
+  },
+  {
+    "id": 4,
+    "name": "Sophia Brown",
+    "picture": "https://randomuser.me/api/portraits/women/4.jpg",
+    "email": "sophia@example.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["family"],
+    "bio": "Cousin ",
+    "goal": 15,
+    "next_due_date": "2025-08-05"
+  },
+  {
+    "id": 5,
+    "name": "David Wilson",
+    "picture": "https://randomuser.me/api/portraits/men/5.jpg",
+    "email": "david@example.com",
+    "days_since_contact": 9,
+    "status": "due-soon",
+    "tags": ["business"],
+    "bio": "Business ",
+    "goal": 10,
+    "next_due_date": "2025-07-25"
+  },
+  {
+    "id": 6,
+    "name": "Olivia Taylor",
+    "picture": "https://randomuser.me/api/portraits/women/6.jpg",
+    "email": "olivia@example.com",
+    "days_since_contact": 14,
+    "status": "overdue",
+    "tags": ["school", "friend"],
+    "bio": "Friend",
+    "goal": 12,
+    "next_due_date": "2025-07-15"
+  },
+  {
+    "id": 7,
+    "name": "James Anderson",
+    "picture": "https://randomuser.me/api/portraits/men/7.jpg",
+    "email": "james@example.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["gaming"],
+    "bio": "Friend.",
+    "goal": 8,
+    "next_due_date": "2025-08-02"
+  },
+  {
+    "id": 8,
+    "name": "Ava Martinez",
+    "picture": "https://randomuser.me/api/portraits/women/8.jpg",
+    "email": "ava@example.com",
+    "days_since_contact": 11,
+    "status": "due-soon",
+    "tags": ["travel"],
+    "bio": "Buddy .",
+    "goal": 14,
+    "next_due_date": "2025-07-28"
+  },
+  {
+    "id": 9,
+    "name": "William Thomas",
+    "picture": "https://randomuser.me/api/portraits/men/9.jpg",
+    "email": "william@example.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["mentor"],
+    "bio": "Mentor.",
+    "goal": 10,
+    "next_due_date": "2025-07-12"
+  },
+  {
+    "id": 10,
+    "name": "Isabella Moore",
+    "picture": "https://randomuser.me/api/portraits/women/10.jpg",
+    "email": "isabella@example.com",
+    "days_since_contact": 1,
+    "status": "on-track",
+    "tags": ["neighbor"],
+    "bio": "Neighbor ",
+    "next_due_date": "2025-08-10"
+  }
+]
